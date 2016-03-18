@@ -50,3 +50,26 @@
           (append (list (singly-linked-list-data linked-list))
                   (singly-linked-list->list
                     (singly-linked-list-next linked-list))))))
+
+; remove
+;   Removes node at given index from linked list
+;   parameters: node-index  Index of node to be removed
+;               linked-list Linked list to remove node from
+;   return:     Linked list with node removed
+(define (remove node-index linked-list)
+  (cond ((= node-index 0) (singly-linked-list-next linked-list))
+        (else (remove2 node-index 0 linked-list))))
+
+; remove2
+;   Helper function for (remove).
+;   parameters: node-index Index of node to be removed
+;               i Current index
+;               linked-list Linked list to remove node from
+;   return:     Linked list with node removed
+(define (remove2 node-index i linked-list)
+  (cond ((= node-index i) (singly-linked-list-next linked-list))
+        (else (make-singly-linked-list
+                (singly-linked-list-data linked-list)
+                  (remove2 node-index
+                           (add1 i)
+                           (singly-linked-list-next linked-list))))))
