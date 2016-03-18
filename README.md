@@ -21,4 +21,4 @@ Explicit implementation of linked lists in Chicken Scheme
 > (linked-list->list
     (remove INDEX MY-LINKED-LIST))
 (0 1 2 3 4 6 7 8 9)
-``
+```
