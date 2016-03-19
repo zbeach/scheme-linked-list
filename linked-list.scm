@@ -60,7 +60,7 @@
   (cond ((= node-index 0) (singly-linked-list-next linked-list))
         (else (remove-from-linked-list2 node-index 0 linked-list))))
 
-; remove2
+; remove-from-linked-list2
 ;   Helper function for (remove).
 ;   parameters: node-index Index of node to be removed
 ;               i Current index
