@@ -51,14 +51,14 @@
                   (singly-linked-list->list
                     (singly-linked-list-next linked-list))))))
 
-; remove
+; remove-from-linked-list
 ;   Removes node at given index from linked list
 ;   parameters: node-index  Index of node to be removed
 ;               linked-list Linked list to remove node from
 ;   return:     Linked list with node removed
-(define (remove node-index linked-list)
+(define (remove-from-linked-list node-index linked-list)
   (cond ((= node-index 0) (singly-linked-list-next linked-list))
-        (else (remove2 node-index 0 linked-list))))
+        (else (remove-from-linked-list2 node-index 0 linked-list))))
 
 ; remove2
 ;   Helper function for (remove).
@@ -66,10 +66,10 @@
 ;               i Current index
 ;               linked-list Linked list to remove node from
 ;   return:     Linked list with node removed
-(define (remove2 node-index i linked-list)
+(define (remove-from-linked-list2 node-index i linked-list)
   (cond ((= node-index i) (singly-linked-list-next linked-list))
         (else (make-singly-linked-list
                 (singly-linked-list-data linked-list)
-                  (remove2 node-index
-                           (add1 i)
-                           (singly-linked-list-next linked-list))))))
+                (remove-from-linked-list2 node-index
+                         (add1 i)
+                         (singly-linked-list-next linked-list))))))
