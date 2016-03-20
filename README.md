@@ -6,6 +6,7 @@ Explicit implementation of linked lists in Chicken Scheme
 > (define MY-LIST '(0 1 2 3 4 5 6 7 8 9))
 > (define MY-LINKED-LIST
     (list->singly-linked-list MY-LIST))
+> MY-LINKED-LIST
 ,..
 ```
 
